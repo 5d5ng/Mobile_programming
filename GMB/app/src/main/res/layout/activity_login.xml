@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="421dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="#4181a1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+        <ImageButton
+            android:id="@+id/homewtButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/homewtbut" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+        <ImageButton
+            android:id="@+id/locwtButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/locwtbut" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+        <ImageButton
+            android:id="@+id/menuwtButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/menuwtbut" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Find a \nLuggage storage"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/idimg" />
+
+        <EditText
+            android:id="@+id/EditText1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="ID"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            android:textSize="30sp"
+            app:srcCompat="@drawable/txtbox" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/pwimg" />
+
+        <EditText
+            android:id="@+id/EditText2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="PW"
+            android:inputType="textPassword"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            android:textSize="30sp"
+            app:srcCompat="@drawable/txtbox" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/loginbut" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/signupbut" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>
