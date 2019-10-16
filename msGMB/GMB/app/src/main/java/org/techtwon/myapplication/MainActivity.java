@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Next Page", Toast.LENGTH_LONG).show();
                 Intent myintent = new Intent(MainActivity.this,HomeActivity.class);
-
+                TextView textView2 = (TextView)findViewById(R.id.textView2);
+                textView2.setText("Touch event handled");
                 startActivity(myintent);
                 finish();
             }
