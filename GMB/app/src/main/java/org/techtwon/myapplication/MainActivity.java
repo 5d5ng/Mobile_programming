@@ -1,10 +1,6 @@
 package org.techtwon.myapplication;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.wifi.hotspot2.pps.HomeSp;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,11 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +52,11 @@ public class MainActivity extends AppCompatActivity {
         menuwtButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
-                //Intent myintent = new Intent(MainActivity.this,LoginActivity.class);
+                alertdialog(); //대화상자형 로그인
 
-                //startActivity(myintent);
-                //finish();
-                showAlertDialog();
             }
         });
+
 
         Button newpage = (Button)findViewById(R.id.newpage); //메인화면 Tap시 HomeActivity로 이동
         newpage.setOnClickListener(new View.OnClickListener() {
@@ -82,30 +74,36 @@ public class MainActivity extends AppCompatActivity {
         TextView GMB = (TextView)findViewById(R.id.GMB);
         GMB.setSelected(true);
     }
+    void alertdialog()
 
-    void showAlertDialog() {
-        LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        LinearLayout loginLayout =
-                (LinearLayout) vi.inflate(R.layout.activity_log, null);
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this); //대화상자 객체 생성
+        LayoutInflater inflater = getLayoutInflater();  //xml파일과 연결을 위해 인플레이터 생성
+        View view = inflater.inflate(R.layout.activity_log, null);
+        builder.setView(view); //대화상자 나타내기
+        final Button submit = (Button) view.findViewById(R.id.buttonSubmit);
+        final EditText ID = (EditText) view.findViewById(R.id.edittextID);
+        final EditText password = (EditText) view.findViewById(R.id.edittextPassword);
 
-        final EditText id = (EditText) loginLayout.findViewById(R.id.EditText1);
-        final EditText pw = (EditText) loginLayout.findViewById(R.id.EditText2);
-        final ImageButton login = (ImageButton)findViewById(R.id.imageButton2);
+        final AlertDialog dialog = builder.create();
+        submit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String strEmail = ID.getText().toString();
+                String strPassword = password.getText().toString();
+                if(strEmail.equals("user") && strPassword.equals("user")) { //기본 아이디 비밀번호를 user로 설정
+                    Toast.makeText(getApplicationContext(), strEmail+"님 로그인 성공!", Toast.LENGTH_LONG).show();
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "로그인 실패 다시시도해주세요!", Toast.LENGTH_LONG).show();
+                dialog.dismiss();
+            }
+        });
 
-        new AlertDialog.Builder(this)
-                //.setTitle("로그인")
-                .setView(loginLayout)
-                .setNeutralButton("확인", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(
-                                MainActivity.this,
-                                "ID : " + id.getText().toString() +
-                                        "\nPW : " + pw.getText().toString(),
-                                Toast.LENGTH_LONG).show();
-                    }
-                }).show();
+        dialog.show();
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
