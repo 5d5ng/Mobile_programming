@@ -2,6 +2,7 @@ package org.techtwon.myapplication;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -69,11 +70,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
-            case R.id.menu1:
-                Toast.makeText(this, "logout", Toast.LENGTH_SHORT).show();
-                return true;
             case R.id.menu2:
                 Toast.makeText(this, "exit", Toast.LENGTH_SHORT).show();
+                ActivityCompat.finishAffinity(this);
+                System.runFinalizersOnExit(true);
+                System.exit(0);
                 return true;
         }
         return super.onOptionsItemSelected(item);
