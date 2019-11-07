@@ -24,9 +24,8 @@ public class MapActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Main Page", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(MapActivity.this, MainActivity.class);
+                Intent myintent = new Intent(MapActivity.this, HomeActivity.class);
                 startActivity(myintent);
-                finish();
             }
         });
 
@@ -38,7 +37,6 @@ public class MapActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Map Page", Toast.LENGTH_LONG).show();
                 Intent myintent = new Intent(MapActivity.this,MapActivity.class);
                 startActivity(myintent);
-                finish();
             }
         });
 
@@ -49,9 +47,20 @@ public class MapActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
                 Intent myintent = new Intent(MapActivity.this,LoginActivity.class);
-
                 startActivity(myintent);
-                finish();
+            }
+        });
+
+        //결제 진행 버튼, 로그인 된경우와 안된경우 구분 하여 진행
+        ImageButton Pay = (ImageButton)findViewById(R.id.rpaybut);
+        Pay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "Pay Page", Toast.LENGTH_LONG).show();
+                //Intent myintent = new Intent(MapActivity.this,PayActivity.class); //로그인 된 경우
+                Toast.makeText(getApplicationContext(), "로그인 후 가능합니다", Toast.LENGTH_LONG).show(); //로그인 안된경우
+                Intent myintent = new Intent(MapActivity.this,LoginActivity.class);
+                startActivity(myintent);
             }
         });
     }

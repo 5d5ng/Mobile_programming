@@ -5,7 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeActivity">>
+    tools:context=".HomeActivity"><![CDATA[>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -83,132 +97,257 @@
             android:text="Find a luggage storage"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textIsSelectable="false"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="277dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/mylocimg"
-            android:layout_width="60dp"
-            android:layout_height="72dp"
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:padding="0sp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/locimg" />
-
-        <ImageView
-            android:id="@+id/txtbox1"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:padding="0sp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/txtbox" />
+            android:foregroundGravity="center">
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/loc_editText"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="7dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Local"
+                android:inputType="textPersonName"
+                android:textSize="25dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/dropoffimg"
-            android:layout_width="60dp"
-            android:layout_height="65dp"
+                <ImageView
+                    android:id="@+id/mylocimg2"
+                    android:layout_width="10dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/locimg" />
+
+                <ImageView
+                    android:id="@+id/locbox"
+                    android:layout_width="200dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:foregroundGravity="center"
+                    android:padding="0sp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/txtbox" />
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:padding="0sp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/calenderimg" />
-
-        <ImageView
-            android:id="@+id/txtbox2"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:padding="0sp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/txtbox" />
+            android:foregroundGravity="center">
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/drop_editText"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="7dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Drop_day"
+                android:inputType="textPersonName"
+                android:textSize="25dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/pickupimg"
-            android:layout_width="60dp"
-            android:layout_height="65dp"
+                <ImageView
+                    android:id="@+id/dropoffimg2"
+                    android:layout_width="10dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:padding="0sp"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/calenderimg" />
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="200dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:padding="0sp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/txtbox" />
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:padding="0sp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/calenderimg" />
-
-        <ImageView
-            android:id="@+id/txtbox3"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:padding="0sp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/txtbox" />
+            android:foregroundGravity="center">
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/pw_editText3"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="7dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Pickup_day"
+                android:inputType="textPersonName"
+                android:textSize="25dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/lugimg"
-            android:layout_width="60dp"
-            android:layout_height="65dp"
-            android:layout_margin="5dp"
-            android:padding="0sp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/lugimg" />
+                <ImageView
+                    android:id="@+id/pickupimg2"
+                    android:layout_width="10dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:padding="0sp"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/calenderimg" />
 
-        <ImageView
-            android:id="@+id/txtbox4"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="200dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:padding="0sp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/txtbox" />
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:padding="0sp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/txtbox" />
+            android:foregroundGravity="center">
 
+            <EditText
+                android:id="@+id/day_editText"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="7dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="How many Lug"
+                android:inputType="textPersonName"
+                android:textSize="25dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/lugimg3"
+                    android:layout_width="10dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:padding="0sp"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/lugimg" />
+
+                <ImageView
+                    android:id="@+id/txtbox"
+                    android:layout_width="200dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:padding="0sp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/txtbox" />
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -222,7 +361,7 @@
             android:layout_weight="1" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/searchbut"
             android:layout_width="286dp"
             android:layout_height="92dp"
             android:layout_gravity="center"

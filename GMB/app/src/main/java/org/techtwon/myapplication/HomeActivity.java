@@ -27,7 +27,6 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Main Page", Toast.LENGTH_LONG).show();
                 Intent myintent = new Intent(HomeActivity.this, MainActivity.class);
                 startActivity(myintent);
-                finish();
             }
         });
 
@@ -39,20 +38,27 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Map Page", Toast.LENGTH_LONG).show();
                 Intent myintent = new Intent(HomeActivity.this,MapActivity.class);
                 startActivity(myintent);
-                finish();
             }
         });
 
         //메뉴
-        ImageButton menuwtButton = (ImageButton)findViewById(R.id.menuwtButton); // (미로그인시)로그인 화면으로 이동, (로그인된 경우)메뉴화면으로 이동
+        ImageButton menuwtButton = (ImageButton)findViewById(R.id.menuwtButton); // (미로그인시)로그인 화면으로 이동, (로그인된 경우)메뉴화면으로 이동-(미구현)
         menuwtButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
                 Intent myintent = new Intent(HomeActivity.this,LoginActivity.class);
-
                 startActivity(myintent);
-                finish();
+            }
+        });
+
+        //검색버튼, 정보 넘겨주어야 함(미구현)
+        ImageButton Search = (ImageButton)findViewById(R.id.searchbut);
+        Search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myintent = new Intent(HomeActivity.this,MapActivity.class);
+                startActivity(myintent);
             }
         });
     }
