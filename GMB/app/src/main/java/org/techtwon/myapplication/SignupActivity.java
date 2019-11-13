@@ -80,7 +80,7 @@ public class SignupActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
 
-            case R.id.menu2:
+            case R.id.menu1:
                 Toast.makeText(this, "exit", Toast.LENGTH_SHORT).show();
                 ActivityCompat.finishAffinity(this);
                 System.runFinalizersOnExit(true);

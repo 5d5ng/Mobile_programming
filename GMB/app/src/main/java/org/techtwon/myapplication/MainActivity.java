@@ -1,30 +1,51 @@
 package org.techtwon.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  {
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //상단 버튼 3개 인텐트
-        //홈
+        //재생스위치
+        final MediaPlayer musicPlayer ;
+        musicPlayer = MediaPlayer.create(this,R.raw.background);
+        final Switch myswitch = (Switch) findViewById(R.id.switch1);
+        myswitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(myswitch.isChecked() ==  true){
+                    musicPlayer.start();
+                }
+                else{
+                    musicPlayer.stop();
+                }
+            }
+        });
+
+
+
         ImageButton homewtButton = (ImageButton)findViewById(R.id.homewtButton); // 홈 화면으로 이동
         homewtButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +78,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
-
+        //큰 화면
         Button newpage = (Button)findViewById(R.id.newpage); //메인화면 Tap시 HomeActivity로 이동
         newpage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,11 +88,18 @@ public class MainActivity extends AppCompatActivity  {
                 TextView textView2 = (TextView)findViewById(R.id.textView2);
                 textView2.setText("Touch event handled");
                 startActivity(myintent);
+
+
             }
         });
 
         TextView GMB = (TextView)findViewById(R.id.GMB);
         GMB.setSelected(true);
+
+
+
+
+
     }
 
     //옵션메뉴뉴
@@ -82,16 +110,21 @@ public class MainActivity extends AppCompatActivity  {
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
 
-            case R.id.menu2:
+            case R.id.menu1:
                 Toast.makeText(this, "exit", Toast.LENGTH_SHORT).show();
                 ActivityCompat.finishAffinity(this);
                 System.runFinalizersOnExit(true);
                 System.exit(0);
                 return true;
+            case R.id.menuVideo:
+                Intent myintent = new Intent(this, VideoActivity.class);
+                startActivity(myintent);
         }
         return super.onOptionsItemSelected(item);
     }

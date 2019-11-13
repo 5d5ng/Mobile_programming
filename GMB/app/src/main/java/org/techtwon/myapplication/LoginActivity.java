@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
@@ -126,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
-            case R.id.menu2:
+            case R.id.menu1:
                 Toast.makeText(this, "exit", Toast.LENGTH_SHORT).show();
                 ActivityCompat.finishAffinity(this);
                 System.runFinalizersOnExit(true);

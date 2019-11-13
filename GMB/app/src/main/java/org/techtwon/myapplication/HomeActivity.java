@@ -1,6 +1,5 @@
 package org.techtwon.myapplication;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -73,7 +72,7 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
 
-            case R.id.menu2:
+            case R.id.menu1:
                 Toast.makeText(this, "exit", Toast.LENGTH_SHORT).show();
                 ActivityCompat.finishAffinity(this);
                 System.runFinalizersOnExit(true);
