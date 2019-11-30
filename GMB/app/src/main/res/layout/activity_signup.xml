@@ -222,7 +222,71 @@
                 android:layout_height="match_parent">
 
                 <EditText
+                    android:id="@+id/pwck_editText"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="70dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="PW CHECK"
+                    android:inputType="textPersonName"
+                    android:textSize="25dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/pwckimg"
+                        android:layout_width="10dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:scaleType="fitStart"
+                        app:srcCompat="@android:drawable/ic_partial_secure" />
+
+                    <ImageView
+<<<<<<< HEAD
+                        android:id="@+id/Name"
+=======
+                        android:id="@+id/imageView20"
+>>>>>>> b50ec7dbdd150b8e0b41fd2ffe60a4f080ccd7a4
+                        android:layout_width="200dp"
+                        android:layout_height="47dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:padding="0sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/txtbox" />
+
+                    <Space
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+<<<<<<< HEAD
+                    android:id="@+id/phone_editText"
+=======
                     android:id="@+id/name_editText"
+>>>>>>> b50ec7dbdd150b8e0b41fd2ffe60a4f080ccd7a4
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
@@ -255,7 +319,7 @@
                         app:srcCompat="@drawable/idimg" />
 
                     <ImageView
-                        android:id="@+id/Name"
+                        android:id="@+id/txtbox1"
                         android:layout_width="200dp"
                         android:layout_height="47dp"
                         android:layout_gravity="center"
@@ -278,7 +342,7 @@
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:id="@+id/phone_editText"
+                    android:id="@+id/phone_editText5"
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
@@ -368,62 +432,6 @@
 
                     <ImageView
                         android:id="@+id/imageView18"
-                        android:layout_width="200dp"
-                        android:layout_height="47dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_weight="1"
-                        android:padding="0sp"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/txtbox" />
-
-                    <Space
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <EditText
-                    android:id="@+id/lug_editText"
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|right"
-                    android:layout_marginRight="70dp"
-                    android:layout_marginBottom="7dp"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:hint="..."
-                    android:inputType="textPersonName"
-                    android:textSize="25dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/lugimg"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_weight="1"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/lugimg" />
-
-                    <ImageView
-                        android:id="@+id/imageView20"
                         android:layout_width="200dp"
                         android:layout_height="47dp"
                         android:layout_gravity="center"
