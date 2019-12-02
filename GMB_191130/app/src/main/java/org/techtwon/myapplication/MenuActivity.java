@@ -17,7 +17,6 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-
         //상단 버튼 3개
         Home = findViewById(R.id.homewtButton);
         Locate = findViewById(R.id.locwtButton);
@@ -58,8 +57,6 @@ public class MenuActivity extends AppCompatActivity {
         String id = intent.getExtras().getString("ID");
         cusID = findViewById(R.id.TextView);
         cusID.setText(id); // set Text view to ID
-
-
 
 
         //메뉴 버튼 4개

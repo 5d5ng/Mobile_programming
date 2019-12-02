@@ -117,7 +117,7 @@
             android:foregroundGravity="center">
 
             <EditText
-                android:id="@+id/loc_editText"
+                android:id="@+id/TextView"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|right"

@@ -59,7 +59,7 @@ public class PayActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "결제 정상 완료", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(PayActivity.this,MenuActivity.class);
+                Intent myintent = new Intent(PayActivity.this,ReservationActivity.class);
                 startActivity(myintent);
             }
         });
