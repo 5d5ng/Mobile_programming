@@ -46,15 +46,23 @@ public class MenuActivity extends AppCompatActivity {
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Detail Page", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(MenuActivity.this,MenuActivity.class);
-                startActivity(myintent);
+                if(DatabaseHelper.isLogin) {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MenuActivity.this, MenuActivity.class);
+                    startActivity(myintent);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MenuActivity.this, LoginActivity.class);
+                    startActivity(myintent);
+                }
             }
         });
 
 
-        Intent intent = getIntent(); //get ID from LoginActivity
-        String id = intent.getExtras().getString("ID");
+//        Intent intent = getIntent(); //get ID from LoginActivity
+//        String id = intent.getExtras().getString("ID");
+        String id = DatabaseHelper.nowID;
         cusID = findViewById(R.id.TextView);
         cusID.setText(id); // set Text view to ID
 
@@ -71,6 +79,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Logout", Toast.LENGTH_LONG).show();
                 Intent myintent = new Intent(MenuActivity.this,LoginActivity.class);
+                DatabaseHelper.isLogin = false;
                 startActivity(myintent);
             }
         });

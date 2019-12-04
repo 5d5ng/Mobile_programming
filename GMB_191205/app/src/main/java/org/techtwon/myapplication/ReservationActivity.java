@@ -59,16 +59,25 @@ public class ReservationActivity extends AppCompatActivity {
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Detail Page", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(ReservationActivity.this,MenuActivity.class);
-                startActivity(myintent);
+                if(DatabaseHelper.isLogin) {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(ReservationActivity.this, MenuActivity.class);
+                    startActivity(myintent);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(ReservationActivity.this, LoginActivity.class);
+                    startActivity(myintent);
+                }
+
             }
         });
 
-        Intent intent = getIntent(); //get ID from LoginActivity
-//        String id = intent.getExtras().getString("ID");  //여기부터 에러나 ㅠㅜㅠㅜ
-//        cusID = findViewById(R.id.TextView);
-//        cusID.setText(id); // set Text view to ID
+//        Intent intent = getIntent(); //get ID from LoginActivity
+        String id = DatabaseHelper.nowID;
+        cusID = findViewById(R.id.textView_Re);
+        cusID.setText(id); // set Text view to ID
+
 
 //        //스크롤뷰
 //        scrollview = (ScrollView)findViewById(R.id.scrollview);

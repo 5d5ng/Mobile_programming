@@ -11,12 +11,12 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_map);
         //상단 버튼 3개 인텐트
         //홈
         ImageButton homeButton = (ImageButton)findViewById(R.id.homeButton); // 홈 화면으로 이동
@@ -24,39 +24,49 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Main Page", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(HomeActivity.this, MainActivity.class);
+                Intent myintent = new Intent(MapActivity.this, HomeActivity.class);
                 startActivity(myintent);
             }
         });
 
         //지도
-        ImageButton locwtButton = (ImageButton)findViewById(R.id.locwtButton); // 지도 화면으로 이동
-        locwtButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton locButton = (ImageButton)findViewById(R.id.locButton); // 지도 화면으로 이동
+        locButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Map Page", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(HomeActivity.this,MapActivity.class);
+                Intent myintent = new Intent(MapActivity.this,MapActivity.class);
                 startActivity(myintent);
             }
         });
 
         //메뉴
-        ImageButton menuwtButton = (ImageButton)findViewById(R.id.menuwtButton); // (미로그인시)로그인 화면으로 이동, (로그인된 경우)메뉴화면으로 이동-(미구현)
+        ImageButton menuwtButton = (ImageButton)findViewById(R.id.menuwtButton); // (미로그인시)로그인 화면으로 이동, (로그인된 경우)메뉴화면으로 이동
         menuwtButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(HomeActivity.this,LoginActivity.class);
-                startActivity(myintent);
+                if(DatabaseHelper.isLogin) {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MapActivity.this, MenuActivity.class);
+                    startActivity(myintent);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MapActivity.this, LoginActivity.class);
+                    startActivity(myintent);
+                }
             }
         });
 
-        //검색버튼, 정보 넘겨주어야 함(미구현)
-        ImageButton Search = (ImageButton)findViewById(R.id.searchbut);
-        Search.setOnClickListener(new View.OnClickListener() {
+        //결제 진행 버튼, 로그인 된경우와 안된경우 구분 하여 진행
+        ImageButton Pay = (ImageButton)findViewById(R.id.rpaybut);
+        Pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myintent = new Intent(HomeActivity.this,MapActivity.class);
+                //Toast.makeText(getApplicationContext(), "Pay Page", Toast.LENGTH_LONG).show();
+                //Intent myintent = new Intent(MapActivity.this,PayActivity.class); //로그인 된 경우
+                Toast.makeText(getApplicationContext(), "로그인 후 가능합니다", Toast.LENGTH_LONG).show(); //로그인 안된경우
+                Intent myintent = new Intent(MapActivity.this,LoginActivity.class);
                 startActivity(myintent);
             }
         });

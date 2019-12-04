@@ -10,6 +10,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public final static String MY_CARDB_NAME = "db_name";
     public static String  TableName = "client";
     public static int VERSION = 1 ;
+    public static boolean isLogin =false;
+    public static String nowID = "";
 
     public DatabaseHelper (Context context){
         super(context,MY_CARDB_NAME,null,VERSION);

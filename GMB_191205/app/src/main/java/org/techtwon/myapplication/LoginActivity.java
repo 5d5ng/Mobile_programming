@@ -122,8 +122,10 @@ public class LoginActivity extends AppCompatActivity {
                 if(chkIDPW(idList,pwList,strID,strPassword)) { //기본 아이디 비밀번호를 user로 설정
 
                     Toast.makeText(getApplicationContext(), strID+"님 로그인 성공!", Toast.LENGTH_LONG).show();
-                    Intent myintent = new Intent(LoginActivity.this,MenuActivity.class);
-                    myintent.putExtra("ID",strID);
+                    DatabaseHelper.isLogin = true;
+                    DatabaseHelper.nowID = strID;
+                   Intent myintent = new Intent(LoginActivity.this,MenuActivity.class);
+                  //  myintent.putExtra("ID",strID);
                     startActivity(myintent);
                     finish();
                 }

@@ -73,9 +73,16 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(MainActivity.this,LoginActivity.class);
-                startActivity(myintent);
+                if(DatabaseHelper.isLogin) {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MainActivity.this, MenuActivity.class);
+                    startActivity(myintent);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(myintent);
+                }
             }
         });
 
