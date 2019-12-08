@@ -162,8 +162,8 @@ public class LoginActivity extends AppCompatActivity {
 
         for(int i=0;i < recordSize ;i++){
             cursor.moveToNext();
-            String temp_id = cursor.getString(1);
-            String temp_pw = cursor.getString(2);
+            String temp_id = cursor.getString(0);
+            String temp_pw = cursor.getString(1);
             println("레코드"+temp_id+" "+temp_pw);
             idList.add(temp_id);
             pwList.add(temp_pw);

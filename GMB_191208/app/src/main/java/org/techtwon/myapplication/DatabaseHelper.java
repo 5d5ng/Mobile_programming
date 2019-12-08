@@ -49,11 +49,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         println("oncreate 호출됨");
         String sql = "create table if not exists " + ClientTableName +"("
-
-                +" id text PRIMARY KEY, "
-                +" pw text,"
-                +"name text,"
-                +"phone text)";
+                +" id nvarchar(30) PRIMARY KEY, "
+                +" pw nvarchar(30),"
+                +"name nvarchar(30),"
+                +"phone nvarchar(30))";
 
         String sql2 = "create table if not exists " + ReservedTableName +"("
 //                +"_id integer PRIMARY KEY autoincrement, "

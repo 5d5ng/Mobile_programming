@@ -35,7 +35,7 @@ public class SignupActivity extends AppCompatActivity {
         database = dbHelper.getWritableDatabase();
         dbHelper.onCreate(database); // 테이블 생성
      //   dbHelper.onUpgrade(database,2,3);//테이블 갈아엎을때 사용
-        //dbHelper.onUpgrade(database,2,3);
+//        dbHelper.onUpgrade(database,3,4);
         //상단 버튼 3개 인텐트
         //홈
         ImageButton homewtButton = (ImageButton)findViewById(R.id.homewtButton); // 홈 화면으로 이동
