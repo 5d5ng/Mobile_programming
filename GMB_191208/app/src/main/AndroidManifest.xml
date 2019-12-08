@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDAu9oyc29nkDcyRdRRAOIQM8QQozup3J4"/>
+            android:value="AIzaSyDWuikL9Xumvap0cBi2DgFzKJvZnG8wif8"/>
         <activity android:name=".HelpActivity"></activity>
         <activity android:name=".PayActivity" />
         <activity android:name=".ReservationActivity" />

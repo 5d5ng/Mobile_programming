@@ -110,16 +110,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                  String strID = ID.getText().toString();
                  String  strPassword = password.getText().toString();
-//                if(strID.equals("user") && strPassword.equals("user")) { //기본 아이디 비밀번호를 user로 설정
-//                    Toast.makeText(getApplicationContext(), strID+"님 로그인 성공!", Toast.LENGTH_LONG).show();
-//                    Intent myintent = new Intent(LoginActivity.this,MenuActivity.class);
-//                    startActivity(myintent);
-//                    finish();
-//                }
+
                 dbHelper = DatabaseHelper.getInstance(getApplicationContext());
                 database = dbHelper.getReadableDatabase();
-
                 executeQueary();
+
                 if(chkIDPW(idList,pwList,strID,strPassword)) { //기본 아이디 비밀번호를 user로 설정
 
                     Toast.makeText(getApplicationContext(), strID+"님 로그인 성공!", Toast.LENGTH_LONG).show();

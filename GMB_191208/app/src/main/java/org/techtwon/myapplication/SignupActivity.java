@@ -27,7 +27,6 @@ public class SignupActivity extends AppCompatActivity {
     DatabaseHelper dbHelper ;
     SQLiteDatabase database ;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +35,7 @@ public class SignupActivity extends AppCompatActivity {
         database = dbHelper.getWritableDatabase();
         dbHelper.onCreate(database); // 테이블 생성
      //   dbHelper.onUpgrade(database,2,3);//테이블 갈아엎을때 사용
+        //dbHelper.onUpgrade(database,2,3);
         //상단 버튼 3개 인텐트
         //홈
         ImageButton homewtButton = (ImageButton)findViewById(R.id.homewtButton); // 홈 화면으로 이동
@@ -83,7 +83,7 @@ public class SignupActivity extends AppCompatActivity {
         //database 작업
 
         edtID = (EditText) findViewById(R.id.id_editText) ;
-        edtPW = (EditText) findViewById(R.id.pw_editText);
+        edtPW = (EditText) findViewById(R.id.Cpw_editText);
        edtName = (EditText)findViewById(R.id.name_editText);
        edtPnum = (EditText)findViewById(R.id.phone_editText);
 

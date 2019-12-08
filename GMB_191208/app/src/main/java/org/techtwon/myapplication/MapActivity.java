@@ -2,6 +2,7 @@ package org.techtwon.myapplication;
 
 import android.content.Intent;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,15 +20,23 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends FragmentActivity
-        implements OnMapReadyCallback {
+import java.util.ArrayList;
+
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
+    DatabaseHelper dbHelper ;
+    SQLiteDatabase database ;
+
     GoogleMap mMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+//        dbHelper = DatabaseHelper.getInstance(getApplicationContext());
+//        database = dbHelper.getReadableDatabase();
 
         //상단 버튼 3개 인텐트
         //홈
@@ -57,9 +66,16 @@ public class MapActivity extends FragmentActivity
         menuwtButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(MapActivity.this,LoginActivity.class);
-                startActivity(myintent);
+                if(DatabaseHelper.isLogin) {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MapActivity.this, MenuActivity.class);
+                    startActivity(myintent);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Login Page", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MapActivity.this, LoginActivity.class);
+                    startActivity(myintent);
+                }
             }
         });
 
@@ -68,11 +84,19 @@ public class MapActivity extends FragmentActivity
         Pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(), "Pay Page", Toast.LENGTH_LONG).show();
-                //Intent myintent = new Intent(MapActivity.this,PayActivity.class); //로그인 된 경우
-                Toast.makeText(getApplicationContext(), "로그인 후 가능합니다", Toast.LENGTH_LONG).show(); //로그인 안된경우
-                Intent myintent = new Intent(MapActivity.this,LoginActivity.class);
-                startActivity(myintent);
+
+
+                if(DatabaseHelper.isLogin) {
+                    DatabaseHelper.PickedStore = true; //매장 선택 확인
+                    Toast.makeText(getApplicationContext(), "결제 페이지로 이동", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MapActivity.this, PayActivity.class);
+                    startActivity(myintent);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "로그인 후 시도하세요.", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(MapActivity.this, LoginActivity.class);
+                    startActivity(myintent);
+                }
             }
         });
 
@@ -106,7 +130,7 @@ public class MapActivity extends FragmentActivity
     public void onMapReady(GoogleMap googleMap) {
         // 구글 맵 객체를 불러온다.
         mMap = googleMap;
-
+        ArrayList<MarkerOptions> storeList = new ArrayList<MarkerOptions>();
         // 학교에 대한 위치 설정
         LatLng school = new LatLng(35.134428, 129.103109);
 
@@ -143,4 +167,6 @@ public class MapActivity extends FragmentActivity
         mMap.addMarker(makerOptions4);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(school, 14));
     }
+
+
 }

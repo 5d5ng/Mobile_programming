@@ -186,7 +186,7 @@
                 android:layout_marginBottom="7dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Drop_day"
+                android:hint="Drop_day 8자리"
                 android:inputType="textPersonName"
                 android:textSize="25dp" />
 
@@ -238,7 +238,7 @@
             android:foregroundGravity="center">
 
             <EditText
-                android:id="@+id/pw_editText3"
+                android:id="@+id/pick_editText"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|right"
@@ -246,7 +246,7 @@
                 android:layout_marginBottom="7dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Pickup_day"
+                android:hint="Pickup_day 8자리"
                 android:inputType="textPersonName"
                 android:textSize="25dp" />
 

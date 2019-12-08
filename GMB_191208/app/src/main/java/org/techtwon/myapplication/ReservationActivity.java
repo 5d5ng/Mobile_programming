@@ -19,7 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class ReservationActivity extends AppCompatActivity {
-    ArrayList<Story> al = new ArrayList<Story>();
+    
+
     ImageButton Home,Locate,Menu;
     TextView cusID;
     ScrollView scrollview;
@@ -89,65 +90,46 @@ public class ReservationActivity extends AppCompatActivity {
 //            }
 //        });
 
-        al.add(new Story(R.drawable.txtbox,"덩이의 물품 보관소","용소로 19번길","010-8524-1451","2019.12.01 ","2019.12.05", "1"));
-        al.add(new Story(R.drawable.txtbox,"MUX의 물품 보관소","용소로 45","010-2803-7944","2019.11.30 ","2019.12.03", "3"));
-        al.add(new Story(R.drawable.txtbox,"덩이의 물품 보관소","용소로 19번길","010-8524-1451","2019.12.15 ","2019.12.16", "1"));
-        al.add(new Story(R.drawable.txtbox,"레오밍키의 물품 보관소","목화로 474번길","010-7329-0313","2019.12.24 ","2019.12.26", "2"));
-        al.add(new Story(R.drawable.txtbox,"덩이의 물품 보관소","용소로 19번길","010-8524-1451","2019.12.01 ","2019.12.05", "1"));
-        al.add(new Story(R.drawable.txtbox,"MUX의 물품 보관소","용소로 45","010-2803-7944","2019.11.30 ","2019.12.03", "3"));
-        al.add(new Story(R.drawable.txtbox,"덩이의 물품 보관소","용소로 19번길","010-8524-1451","2019.12.15 ","2019.12.16", "1"));
-        al.add(new Story(R.drawable.txtbox,"레오밍키의 물품 보관소","목화로 474번길","010-7329-0313","2019.12.24 ","2019.12.26", "2"));
+        DatabaseHelper.ReserveList.add(new Store(R.drawable.txtbox,"덩이의 물품 보관소","용소로 19번길","010-8524-1451","2019.12.01 ","2019.12.05", "1"));
+        DatabaseHelper.ReserveList.add(new Store(R.drawable.txtbox,"MUX의 물품 보관소","용소로 45","010-2803-7944","2019.11.30 ","2019.12.03", "3"));
+        DatabaseHelper.ReserveList.add(new Store(R.drawable.txtbox,"덩이의 물품 보관소","용소로 19번길","010-8524-1451","2019.12.15 ","2019.12.16", "1"));
+        DatabaseHelper.ReserveList.add(new Store(R.drawable.txtbox,"레오밍키의 물품 보관소","목화로 474번길","010-7329-0313","2019.12.24 ","2019.12.26", "2"));
+        DatabaseHelper.ReserveList.add(new Store(R.drawable.txtbox,"덩이의 물품 보관소","용소로 19번길","010-8524-1451","2019.12.01 ","2019.12.05", "1"));
+        DatabaseHelper.ReserveList.add(new Store(R.drawable.txtbox,"MUX의 물품 보관소","용소로 45","010-2803-7944","2019.11.30 ","2019.12.03", "3"));
+        DatabaseHelper.ReserveList.add(new Store(R.drawable.txtbox,"덩이의 물품 보관소","용소로 19번길","010-8524-1451","2019.12.15 ","2019.12.16", "1"));
+        DatabaseHelper.ReserveList.add(new Store(R.drawable.txtbox,"레오밍키의 물품 보관소","목화로 474번길","010-7329-0313","2019.12.24 ","2019.12.26", "2"));
 
         // adapter
         MyAdapter adapter = new MyAdapter(
                 getApplicationContext(), // 현재화면의 제어권자
-                R.layout.activity_list, al);
+                R.layout.activity_list,DatabaseHelper.ReserveList);
 
         // adapterView - ListView, GridView
         ListView lv = (ListView)findViewById(R.id.listview);
         lv.setAdapter(adapter);
     }
 
-    class Story{ //자바빈
-        int img; // 이미지
-        String name = ""; //가게이름
-        String local = "";//가게 위치
-        String pnum = ""; //가게전화번호
-        String resdata = ""; //예약날짜
-        String finddata = ""; //찾는날짜
-        String lugcnt; //캐리어 수
-
-        public Story(int img, String name, String local, String pnum, String resdata, String finddata, String lugcnt) {
-            this.img = img;
-            this.name = name;
-            this.local = local;
-            this.pnum = pnum;
-            this.resdata = resdata;
-            this.finddata = finddata;
-            this.lugcnt = lugcnt;
-        }
-        public Story() {} // 생성자
-    }
+    
 
     class MyAdapter extends BaseAdapter {
         Context context;
         int layout;
-        ArrayList<Story> al;
+//        ArrayList<Store> al;
         LayoutInflater inf;
-        public MyAdapter(Context context, int layout, ArrayList<Story> al) {
+        public MyAdapter(Context context, int layout,ArrayList<Store> al) {
             this.context = context;
             this.layout = layout;
-            this.al = al;
+//            this.al = al;
             this.inf = (LayoutInflater) context.getSystemService
                     (Context.LAYOUT_INFLATER_SERVICE);
         }
         @Override
         public int getCount() { // 총 데이터의 개수
-            return al.size();
+            return DatabaseHelper.ReserveList.size();
         }
         @Override
         public Object getItem(int position) { // 해당 행의 데이터
-            return al.get(position);
+            return DatabaseHelper.ReserveList.get(position);
         }
         @Override
         public long getItemId(int position) { // 해당 행의 유니크한 id
@@ -167,7 +149,7 @@ public class ReservationActivity extends AppCompatActivity {
             TextView tv5 = (TextView) convertView.findViewById(R.id.textView5);
             TextView tv6 = (TextView) convertView.findViewById(R.id.textView6);
 
-            Story s = al.get(position);
+            Store s = DatabaseHelper.ReserveList.get(position);
             iv.setImageResource(s.img);
             tv1.setText(s.name);
             tv2.setText(s.local);

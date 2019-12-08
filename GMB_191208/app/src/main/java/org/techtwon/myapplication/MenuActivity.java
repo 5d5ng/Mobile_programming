@@ -13,6 +13,8 @@ public class MenuActivity extends AppCompatActivity {
     ImageButton Home,Locate,Menu;
     ImageButton Logout, Reservation, Pay, Help;
     TextView cusID;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

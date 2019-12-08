@@ -241,7 +241,7 @@
                 android:foregroundGravity="center">
 
                 <EditText
-                    android:id="@+id/pw_editText"
+                    android:id="@+id/Cpw_editText"
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
@@ -250,7 +250,8 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="Card PW"
-                    android:inputType="textPersonName"
+
+                    android:inputType="textPassword"
                     android:textSize="25dp" />
 
                 <LinearLayout
@@ -282,6 +283,7 @@
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
                         android:padding="0sp"
+
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/txtbox" />
 
