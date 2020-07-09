@@ -13,6 +13,10 @@
 
 ![noname06](https://user-images.githubusercontent.com/43948697/71710759-2a8f2e80-2e41-11ea-9012-0a733f463e2e.png)
 
+##사용방법
+Apk 파일 폴더 내부에 apk파일을 첨부하였습니다.
+
+
 ## 개발 환경
 1.Android Studio Version 3.4
 2.Compile SDK Version API:28 Android 9.0
